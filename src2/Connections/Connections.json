@@ -1,0 +1,35 @@
+{
+  "c36e348a-967b-47c9-ace0-6246e1a597d4": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/juanq/gateway/greyhound/3000.150.11/1.0.1613.3116/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://uxdevops.sharepoint.com": {
+        "dataSources": {
+          "appVentas_tab_catalogo": {
+            "tableName": "dbdf3c9b-7b15-4407-a499-e92a9087dff7"
+          }
+        }
+      },
+      "https://uxdevops.sharepoint.com/": {
+        "dataSources": {
+          "appVentas_tab_categorias": {
+            "tableName": "51a7f691-46fb-46e1-b1f0-0f388bf4c7dd"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "appVentas_tab_catalogo",
+      "appVentas_tab_categorias"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c36e348a-967b-47c9-ace0-6246e1a597d4"
+  }
+}

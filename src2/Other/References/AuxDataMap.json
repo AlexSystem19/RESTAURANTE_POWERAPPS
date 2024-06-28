@@ -1,0 +1,3 @@
+{
+  "AppFromDataMetaDataIdsToEntityNameMappings": "{\"%DataSourceName.AFD%\":\"appVentas_tab_catalogo\",\"%DataSourceValue.AFD%\":\"[@appVentas_tab_catalogo]\",\"%SortFieldName.AFD%\":\"\\\"Title\\\"\",\"%SearchFieldName.AFD%\":\"\\\"Title\\\"\",\"%StartsWithFieldName.AFD%\":\"Title\",\"%DeleteConfirmFieldName.AFD%\":\"Title\",\"%SortDescending.AFD%\":\"SortDescending1\",\"%BrowseScreen.AFD%\":\"ListaProductos\",\"%DetailScreen.AFD%\":\"DetalleProducto\",\"%EditScreen.AFD%\":\"EditarProducto\",\"%BrowseContainer.ID%\":\"BrowseGallery1\",\"%DetailEditContainer.ID%\":\"EditForm1\"}"
+}

@@ -1,0 +1,74 @@
+Portada As screen:
+
+    Image2 As image:
+        Height: =1136
+        Image: ='Proyecto nuevo(5)'
+        ImagePosition: =ImagePosition.Fill
+        Transparency: =0.7
+        Width: =640
+        ZIndex: =1
+
+    Image3 As image:
+        Height: =626
+        Image: ='Proyecto nuevo(22)'
+        Width: =548
+        X: =90
+        Y: =71
+        ZIndex: =2
+
+    Label2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =133
+        Size: =66
+        Text: ="CHINESE"
+        Width: =460
+        X: =90
+        Y: =601
+        ZIndex: =4
+
+    Label2_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =100
+        Size: =33
+        Text: ="EXPRESS"
+        Width: =323
+        X: =158
+        Y: =697
+        ZIndex: =5
+
+    Label3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16
+        Text: ="Elige, Ordena y Prueba el sabor Oriental."
+        Width: =560
+        X: =39
+        Y: =797
+        ZIndex: =6
+
+    Image5 As image:
+        Height: =145
+        Image: ='circulo-de-flecha'
+        OnSelect: |-
+            =Navigate(ListaProductos,ScreenTransition.Cover);
+            ClearCollect(tabCatagoria,appVentas_tab_categorias)
+        Width: =145
+        X: =247
+        Y: =902
+        ZIndex: =7
+
+    Label3_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 0, 0, 0.38)
+        Height: =43
+        Size: =16
+        Text: ="Ingresar"
+        Width: =146
+        X: =247
+        Y: =1047
+        ZIndex: =8
+

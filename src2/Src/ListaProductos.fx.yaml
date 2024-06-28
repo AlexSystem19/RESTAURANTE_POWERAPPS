@@ -1,0 +1,253 @@
+"ListaProductos As screen.'phoneBrowseLayout_ver3.0'":
+
+    RectQuickActionBar1 As rectangle:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =376
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Color: =RGBA(168, 0, 0, 1)
+        Fill: =RGBA(58, 58, 58, 0)
+        FontWeight: =FontWeight.Bold
+        Height: =74
+        Size: =43
+        Text: ="Delivery"
+        Width: =270
+        Wrap: =false
+        X: =21
+        Y: =148
+        ZIndex: =2
+
+    IconRefresh1 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        Height: =0
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@appVentas_tab_catalogo])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Actualizar lista"
+        Width: =49
+        ZIndex: =3
+
+    IconSortUpDown1 As icon.ArrowsUpDown:
+        AccessibleLabel: =Self.Tooltip
+        Height: =77
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Ordenar la lista en orden alfabético inverso", "Ordenar la lista en orden alfabético")
+        Width: =0
+        Y: =58
+        ZIndex: =4
+
+    IconNewItem1 As icon.Add:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(DataSourceInfo([@appVentas_tab_catalogo], DataSourceInfo.CreatePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =0
+        Icon: =Icon.Add
+        OnSelect: =NewForm(EditForm1);Navigate(EditarProducto, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Crear elemento"
+        Width: =104
+        X: =68
+        ZIndex: =5
+
+    TextSearchBox1 As text:
+        Default: =""
+        DelayOutput: =true
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =68
+        HintText: ="Buscar Plato"
+        PaddingLeft: =70
+        RadiusBottomLeft: =16
+        RadiusBottomRight: =16
+        RadiusTopLeft: =16
+        RadiusTopRight: =16
+        Size: =21
+        Width: =554
+        X: =43
+        Y: =336
+        ZIndex: =6
+
+    SearchIcon1 As icon.Search:
+        Color: =RGBA(191, 190, 190, 1)
+        Height: =Self.Width
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="Buscar"
+        Width: =TextSearchBox1.Height
+        X: =TextSearchBox1.X
+        Y: =TextSearchBox1.Y
+        ZIndex: =7
+
+    "BrowseGallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =395
+        Items: =SortByColumns(Filter([@appVentas_tab_catalogo], StartsWith(Title, TextSearchBox1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(DetalleProducto, ScreenTransition.None)
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =Min(168, Self.Height - 60)
+        Y: =740
+        ZIndex: =9
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'nombre plato'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Tipo1
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title1.Y + Title1.Height + 2
+            ZIndex: =2
+
+        Body1 As label:
+            Height: =52
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.precio
+            VerticalAlign: =VerticalAlign.Top
+            Width: =91
+            X: =452
+            Y: =86
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Image3_1 As image:
+        Height: =79
+        Image: ='Proyecto nuevo(22)'
+        Width: =83
+        X: =537
+        Y: =9
+        ZIndex: =10
+
+    Label2_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =69
+        Size: =33
+        Text: ="CHINESE"
+        Width: =230
+        X: =193
+        Y: =9
+        ZIndex: =11
+
+    Label2_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        Size: =16
+        Text: ="EXPRESS"
+        Width: =149
+        X: =234
+        Y: =58
+        ZIndex: =12
+
+    Label3_2 As label:
+        Color: =RGBA(194, 29, 29, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =91
+        Size: =16
+        Text: ="Elige, Ordena y Prueba el sabor Oriental."
+        Width: =355
+        X: =21
+        Y: =222
+        ZIndex: =13
+
+    LblAppName1_1 As label:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(58, 58, 58, 0)
+        Height: =82
+        Size: =36
+        Text: ="Categorias"
+        Width: =362
+        Wrap: =false
+        X: =21
+        Y: =419
+        ZIndex: =14
+
+    "Gallery1 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Height: =208
+        Items: =appVentas_tab_categorias
+        TemplatePadding: =0
+        TemplateSize: =265
+        Y: =516
+        ZIndex: =15
+
+        Label4 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Tipo1
+            Width: =265
+            Y: =11
+            ZIndex: =1
+
+        Image7 As image:
+            Height: =210
+            Image: =(ThisItem.img
+            OnSelect: =Select(Parent)
+            Width: =173
+            Y: =93
+            ZIndex: =2
+
